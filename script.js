@@ -185,7 +185,7 @@ const imageSources = {
   lightL: "img/lightL.svg",
   // light off = rouge
   // light on = vert
-  lightSOff: "img/lightS_OFF.svg",
+  lightSOff: "img/lightS_Off.svg",
   lightSOn: "img/lightS_On.svg",
   lightMOff: "img/lightM_Off.svg",
   lightMOn: "img/lightM_On.svg",
