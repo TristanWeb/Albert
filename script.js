@@ -1058,12 +1058,20 @@ for (let item in imageSources) {
 
   img.onload = () => {
     imageLoaded++;
-    // check pendant le load si on arrive au nombre max d'image à charger
     if (imageLoaded === totalImages) {
       startApp();
     }
   };
-  // attribution du nom de l'image
+
+  // En cas d'image introuvable, on logue l'erreur et on incrémente quand même le compteur
+  img.onerror = () => {
+    console.error(`Image introuvable ou erreur de chargement : "${imageSources[item]}" (clé: ${item})`);
+    imageLoaded++;
+    if (imageLoaded === totalImages) {
+      startApp();
+    }
+  };
+
   img.src = imageSources[item];
   assets[item] = img;
 }
